@@ -15,8 +15,8 @@ The REST API documentation can be found on [docs.vautomate-sdk.com](https://docs
 ## Installation
 
 ```sh
-# install from this staging repo
-pip install git+ssh://git@github.com/stainless-sdks/vautomate-sdk-python.git
+# install from the production repo
+pip install git+ssh://git@github.com/akbindal/vauto.git
 ```
 
 > [!NOTE]
@@ -118,7 +118,7 @@ except vautomate_sdk.APIStatusError as e:
     print(e.response)
 ```
 
-Error codes are as followed:
+Error codes are as follows:
 
 | Status Code | Error Type                 |
 | ----------- | -------------------------- |
@@ -247,9 +247,9 @@ agent = response.parse()  # get the object that `agents.chat()` would have retur
 print(agent)
 ```
 
-These methods return an [`APIResponse`](https://github.com/stainless-sdks/vautomate-sdk-python/tree/main/src/vautomate_sdk/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/akbindal/vauto/tree/main/src/vautomate_sdk/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/stainless-sdks/vautomate-sdk-python/tree/main/src/vautomate_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/akbindal/vauto/tree/main/src/vautomate_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -285,8 +285,7 @@ If you need to access undocumented endpoints, params, or response properties, th
 #### Undocumented endpoints
 
 To make requests to undocumented endpoints, you can make requests using `client.get`, `client.post`, and other
-http verbs. Options on the client will be respected (such as retries) will be respected when making this
-request.
+http verbs. Options on the client will be respected (such as retries) when making this request.
 
 ```py
 import httpx
@@ -358,12 +357,12 @@ with VautomateSDK() as client:
 This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
 
 1. Changes that only affect static types, without breaking runtime behavior.
-2. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals)_.
+2. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals.)_
 3. Changes that we do not expect to impact the vast majority of users in practice.
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/vautomate-sdk-python/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/akbindal/vauto/issues) with questions, bugs, or suggestions.
 
 ### Determining the installed version
 
